@@ -35,4 +35,4 @@ jobs:
       - name: Create pull request
         run: 'gh pr create --base=main --fill-first --no-maintainer-edit'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}
