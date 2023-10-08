@@ -10,7 +10,7 @@ jobs:
   bootstrapping:
     env:
       COMMIT_MESSAGE: "${{ github.event.head_commit.message }}"
-    if: ${{ !startsWith(github.event.head_commit.message, 'Brew formula update for gontainer version') }}
+    if: ${{ startsWith(github.event.head_commit.message, 'Brew formula update for gontainer version') }}
     name: Bootstrapping PR
     runs-on: macos-latest
     strategy:
