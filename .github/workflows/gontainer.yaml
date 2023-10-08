@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: gontainer/gontainer
-          token: ${{ secrets.GORELEASER_TOKEN }}
+          token: ${{ secrets.RELEASES_TOKEN }}
 
       - run: git checkout -B bootstrapping/$GONTAINER_VERSION
       - run: brew install gontainer/homebrew-tap/gontainer
@@ -35,4 +35,4 @@ jobs:
       - name: Create pull request
         run: 'gh pr create --base=main --body="Automatically rebuild dependencies 🤖" --fill-first --no-maintainer-edit'
         env:
-          GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
