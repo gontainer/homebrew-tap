@@ -27,7 +27,7 @@ jobs:
           repository: gontainer/gontainer
 
       - run: git checkout -B bootstrapping/$GONTAINER_VERSION
-      - run: brew install gontainer/homebrew-tap/gontainer@$GONTAINER_VERSION
+      - run: brew install gontainer/homebrew-tap/gontainer
       - run: gontainer -v
       - run: make self-compile
       - run: 'git commit -m "feat(bootstrapping): gontainer $GONTAINER_VERSION" internal/gontainer/gontainer.go'
