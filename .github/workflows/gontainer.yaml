@@ -20,7 +20,7 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
           repository: gontainer/gontainer
           token: ${{ secrets.RELEASES_TOKEN }}
 
