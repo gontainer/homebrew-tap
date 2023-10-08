@@ -24,9 +24,9 @@ jobs:
           repository: gontainer/gontainer
           token: ${{ secrets.RELEASES_TOKEN }}
 
-      - run: git checkout -B bootstrapping/$GONTAINER_VERSION
       - run: brew install gontainer/homebrew-tap/gontainer
       - run: gontainer -v
+      - run: git checkout -B bootstrapping/$GONTAINER_VERSION
       - run: make self-compile
       - run: "git config user.name 'github-actions[bot]'"
       - run: "git config user.email 'github-actions[bot]@users.noreply.github.com'"
