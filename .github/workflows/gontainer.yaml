@@ -30,6 +30,8 @@ jobs:
       - run: brew install gontainer/homebrew-tap/gontainer
       - run: gontainer -v
       - run: make self-compile
+      - run: 'git config user.name ${{ github.event.pusher.name }}'
+      - run: 'git config user.email ${{ github.event.pusher.email }}'
       - run: 'git commit -m "feat(bootstrapping): gontainer $GONTAINER_VERSION" internal/gontainer/gontainer.go'
       - run: "git push --set-upstream origin bootstrapping/$GONTAINER_VERSION"
       - name: Create pull request
