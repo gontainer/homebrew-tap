@@ -31,6 +31,7 @@ jobs:
       - run: gontainer -v
       - run: make self-compile
       - run: 'git commit -m "feat(bootstrapping): gontainer $GONTAINER_VERSION" internal/gontainer/gontainer.go'
+      - run: "git push --set-upstream origin bootstrapping/$GONTAINER_VERSION"
       - name: Create pull request
         run: 'gh pr create --base=main --fill-first --no-maintainer-edit'
         env:
