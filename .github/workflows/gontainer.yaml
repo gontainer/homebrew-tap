@@ -13,9 +13,6 @@ jobs:
     if: ${{ startsWith(github.event.head_commit.message, 'Brew formula update for gontainer version') }}
     name: Bootstrapping PR
     runs-on: macos-latest
-    strategy:
-      matrix:
-        go: [ '1.21' ]
     steps:
       - run: echo "GONTAINER_VERSION=$(echo $COMMIT_MESSAGE | awk '{print $NF}')" >> $GITHUB_ENV
       - run: echo "Gontainer $GONTAINER_VERSION"
