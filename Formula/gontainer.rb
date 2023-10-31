@@ -5,23 +5,23 @@
 class Gontainer < Formula
   desc "DI container for GO"
   homepage "https://github.com/gontainer/gontainer"
-  version "0.8.1"
+  version "0.8.2"
   license "MIT"
 
   depends_on "go" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gontainer/gontainer/releases/download/v0.8.1/gontainer_Darwin_arm64.tar.gz"
-      sha256 "60e7a4292c3774c621dfab6ff66338e34a10cab5c6fa01b6c7b7498288b006b0"
+      url "https://github.com/gontainer/gontainer/releases/download/v0.8.2/gontainer_Darwin_arm64.tar.gz"
+      sha256 "dabeaf17e7aedb07cd66c0ee0388165a32448abb01e6d79d6ab6346cac4a6fe4"
 
       def install
         bin.install "gontainer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gontainer/gontainer/releases/download/v0.8.1/gontainer_Darwin_x86_64.tar.gz"
-      sha256 "126e40fb69cdfdc28f916b643d41da8b3f913897f0f6249413f6f0aad031498f"
+      url "https://github.com/gontainer/gontainer/releases/download/v0.8.2/gontainer_Darwin_x86_64.tar.gz"
+      sha256 "eec16847dbaea5198bef921a04b26d4b4c91c418ea40526b3a7d80cf7025a193"
 
       def install
         bin.install "gontainer"
@@ -31,24 +31,24 @@ class Gontainer < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gontainer/gontainer/releases/download/v0.8.1/gontainer_Linux_x86_64.tar.gz"
-      sha256 "5632b0b5eca9deb3179f4a41c8832497b837ff71e97cc506d03fd438f772c52b"
+      url "https://github.com/gontainer/gontainer/releases/download/v0.8.2/gontainer_Linux_x86_64.tar.gz"
+      sha256 "26cf5271e7f8170e5937503e430a4555ba3db5dc1862275d98a0c4776922db61"
 
       def install
         bin.install "gontainer"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gontainer/gontainer/releases/download/v0.8.1/gontainer_Linux_armv7.tar.gz"
-      sha256 "aba49f9a74251727a5dce46dd7781a507504441fc1d25cbbdd6beca2a9e4bf00"
+      url "https://github.com/gontainer/gontainer/releases/download/v0.8.2/gontainer_Linux_armv7.tar.gz"
+      sha256 "c021f5bc2d40f94a8e6e7ef85b7cb2adc65214f17addd3e9ea41cf5aff2dfbe8"
 
       def install
         bin.install "gontainer"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gontainer/gontainer/releases/download/v0.8.1/gontainer_Linux_arm64.tar.gz"
-      sha256 "247575cddaab41bff9e773aca29c4d12927b5c6f41f99a628ea061f4f0a65e27"
+      url "https://github.com/gontainer/gontainer/releases/download/v0.8.2/gontainer_Linux_arm64.tar.gz"
+      sha256 "c1d7ba08d12b5204dbe77a34eaa425188d2cb706613aec2596fdef10236c7198"
 
       def install
         bin.install "gontainer"
